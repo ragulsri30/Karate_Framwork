@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/test\/Sample_Scenario_Outline[1.1:31]","start":1712653800138,"end":1712653801850,"title":"src\/test\/java\/test\/Sample_Scenario_Outline[1.1:31] 14:40:00.138-14:40:01.850 To Validate the different endpoints"},{"id":2,"group":1,"content":"src\/test\/java\/test\/Sample_Scenario_Outline[1.2:32]","start":1712653801867,"end":1712653802316,"title":"src\/test\/java\/test\/Sample_Scenario_Outline[1.2:32] 14:40:01.867-14:40:02.316 To Validate the different endpoints"},{"id":3,"group":1,"content":"src\/test\/java\/test\/Sample_Scenario_Outline[1.3:33]","start":1712653802334,"end":1712653802625,"title":"src\/test\/java\/test\/Sample_Scenario_Outline[1.3:33] 14:40:02.334-14:40:02.625 To Validate the different endpoints"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
